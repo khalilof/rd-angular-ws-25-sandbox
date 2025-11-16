@@ -2,6 +2,10 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
 
+## Before being able to run make sure:
+  - Nodejs is installed
+  - Run npm install inside the repo directory
+
 ## Development server
 
 To start a local development server, run:
