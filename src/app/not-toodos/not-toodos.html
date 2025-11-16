@@ -1,0 +1,9 @@
+<br>
+<input type="text" [(ngModel)]="currentTodoText" #inputField>
+<button (click)="addNewTodo(inputField.value)">Add New Not Todo</button>
+
+<br>
+@for (notT of state.todos() | nTF: inputField.value; track notT.text) {
+  {{notT | json}}
+  <div [ngStyle]="{'text-decoration': notT.completed ? 'line-through': ''}">{{notT.text}} <span (click)="setTodoAsCompleted(notT)">☑️</span></div>
+}

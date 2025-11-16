@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "typescriptBegin": {
+    "ng-workshop-25": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "typescriptBegin:build:production"
+              "buildTarget": "ng-workshop-25:build:production"
             },
             "development": {
-              "buildTarget": "typescriptBegin:build:development"
+              "buildTarget": "ng-workshop-25:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

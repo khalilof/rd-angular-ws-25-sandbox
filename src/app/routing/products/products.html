@@ -1,0 +1,21 @@
+
+<p>
+  {{products()}}
+</p>
+<input type="text" [(ngModel)]="searchTerm" #searchEL>
+<ul class="product-list">
+  @for (product of (products() | search: searchTerm); track $index; let index = $index) {
+    @if (product === 'iphone') {
+      <li [class.odd]="$odd" [class.even]="$even">
+        <a [routerLink]="['/products', product]" class="product-link">📲</a>
+      </li>
+    } @else {
+      <li [class.odd]="$odd" [class.even]="$even">
+        <a [routerLink]="['/products', product]" class="product-link">{{ product }}</a>
+      </li>
+    }
+  }
+</ul>
+<button
+  [ngStyle]="{color: 'red'}"
+  (click)="addNewProduct()">add new random product</button>

@@ -1,0 +1,16 @@
+<p>todos works!</p>
+
+<br />
+All <input name="filter" type="radio" [value]="''"  [(ngModel)]="statusFilter" ><br/>
+Open<input name="filter" type="radio" [value]="'open'"  [(ngModel)]="statusFilter" ><br/>
+Done<input name="filter" type="radio" [value]="'done'" [(ngModel)]="statusFilter" ><br/>
+<input type="text" [(ngModel)]="currentTodoInput" #todoInput>
+<button (click)="addTodo(todoInput.value)">Add Todo</button>
+
+
+@for (todo of state.todos() | todoFilter: todoInput.value: statusFilter; track todo.text) {
+  <div [ngStyle]="{'text-decoration' : todo.completed ? 'line-through' : 'none'}">{{todo.text}}
+
+    <span (click)="setTodoAsCompleted(todo)">☑️</span>
+  </div>
+}
